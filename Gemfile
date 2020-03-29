@@ -33,6 +33,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.2'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'paperclip', '~> 4.2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
