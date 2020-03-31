@@ -1,24 +1,21 @@
-# README
+This is Pixeloid. A photo sharing web application.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my Hands-on project using Ruby on Rails.
 
-Things you may want to cover:
+To access Pixeloid web application, Go to 
 
-* Ruby version
+To get it running on your local machine:
 
-* System dependencies
+```bash
+gem install bundler
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+bundle install
+```
+```bash
+rails db:migrate
+```
+```bash
+rails server
+```
