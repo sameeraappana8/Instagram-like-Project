@@ -1,28 +1,32 @@
 !!!
 %html
 %head
-  %title Instogram
+  %title Pixeloid
   = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
   = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   = csrf_meta_tags
   = csp_meta_tag
 
 %body
-  %nav.navbar.navbar-inverse
+  %nav.navbar.navbar
     .container
-      .navbar-brand= link_to "Instogram", root_path
+      .navbar-brand= link_to "Pixeloid", root_path
 
       - if user_signed_in?
         %ul.nav.navbar-nav.navbar-left
           %li= link_to "Post Your Picture!", new_pic_path
           %li= link_to "Settings", edit_user_registration_path
           %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            Hi!
+            = current_user.email
 
       - else
         %ul.nav.navbar-nav.navbar-left
         %li= link_to "Join Now!", new_user_registration_path
         %li= link_to "Log In", new_user_session_path
-        
+
   .container
     -flash.each do |name, msg|
       =content_tag :div, msg, class: "alert alert-info"

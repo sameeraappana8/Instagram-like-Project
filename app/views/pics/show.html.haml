@@ -17,7 +17,7 @@
               = link_to Like_pic_path(@pic), method: :put, class: "btn btn-default" do
                 %span.glyphicon.glyphicon-fire
                 = @pic.get_upvotes.size
-                
-              - if user_signed_in?
+
+              - if current_user.id == @pic.user.id
                 = link_to "Edit Picture", edit_pic_path, class: "btn btn-info"
                 = link_to "Move to Trash", pic_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger"

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :pics do
-    member do
-      put "Like", to: "pics#upvote"
+  authenticated  :user do
+    root "pics#index", as: "authenticated_root"
+    resources :pics do
+      member do
+        put "Like", to: "pics#upvote"
+      end
     end
   end
-  root 'pics#index'
+ root 'welcome#index'
 end
